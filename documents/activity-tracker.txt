@@ -1,0 +1,31 @@
+10-Aug
+-----------------------
+Index-
+button visible to admin,manager and user-done
+excel tracker sheet-done
+daily activity-done
+my learning-done
+
+09-Aug
+-------------------
+1-faltu code delete -Done
+2-Button on table need to be improved, not looking good -Done
+3-routeractive
+4-upload employee funcitonality
+5-Single Responsibility coding principle -Done
+6-DRY coding principle  -Done
+7-Project Overview should be more explanatory -Done
+8-Add My Learnings (Add in this section incremently whatever you are learning) -Done
+9-Download and install postman on local machine and test GET, POST, DELETE, PUT, PATCH methods -Done
+ 
+08-Aug
+-------------------
+login page button color white,button color primary,gap fixed incresed message red color,font size,text align left of error - Done
+in team member employee search box gap reduce,upload download icon colorful circle,edit button,
+admin aaya to edit enable all,loged in user edit only itself,
+navbar color,
+alignment of admin right bracket role,
+routeractive,
+close button name cancel
+comunication between two components using observable
+

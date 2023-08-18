@@ -1,0 +1,98 @@
+<div class="container-fluid">
+    <div class="row ms-1 me-1 mt-4 mb-3">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header" style="background-color: #efefef88">
+                    <div class="flex-container">
+                        <div>
+                            <form>
+                                <label for="Forecast Month" class="ms-4"
+                                    >Forecast Month</label
+                                >
+                                <input
+                                    #monthInput
+                                    type="month"
+                                    [(ngModel)]="forcastMonth"
+                                    style="width: 40%"
+                                    name="forecast"
+                                    [value]="'2018-05'"
+                                />
+                            </form>
+                        </div>
+                        <div>
+                            <form>
+                                <div class="flex-container mt-2 ms-5">
+                                    WFO Preferences
+                                    <div *ngFor="let days of daysWeek">
+                                        <input
+                                            type="checkbox"
+                                            [value]="days"
+                                            [(ngModel)]="
+                                                selectedValuesOfDays[days]
+                                            "
+                                            name="days"
+                                            class="m-2"
+                                        />
+                                        <label>{{ days }}</label>
+                                    </div>
+
+                                    <button
+                                        class="btn btn-sm btn-outline-secondary ms-4 mb-2"
+                                        (click)="onButtonClick()"
+                                    >
+                                        Apply
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div
+    class="card-body ms-4 me-4"
+    style="
+        border: 1px solid #999;
+        border-radius: 8px;
+        box-shadow: 0 0 8px #999;
+        padding: 2px;
+    "
+>
+    <div style="overflow-x: auto">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th rowspan="2" scope="col">Name</th>
+                    <th
+                        scope="col"
+                        *ngFor="let date of monthDates"
+                        [attr.rowspan]="getRowspan(date)"
+                    >
+                        {{ date }}
+                    </th>
+                </tr>
+                <tr>
+                    <th class="days" scope="col" *ngFor="let days of MonthDays">
+                        {{ days }}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr scope="col" *ngFor="let attendance of attendances">
+                    <td>{{ attendance.name }}</td>
+                    <td *ngFor="let val of attendance.wfhWfoValues">
+                        <span *ngIf="val" class="{{ val }}"> {{ val }}</span>
+                      
+                        <i *ngIf="!val" class="fa-regular fa-face-smile"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div style="text-align: right" class="me-4 mt-2">
+    <button class="btn btn-primary">Save</button>
+</div>
