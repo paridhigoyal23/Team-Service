@@ -69,6 +69,7 @@ export class ExcelUploadComponent {
                 password: `${singleEmployeeData["EmpId"]}@1234`,
                 role: "viewer",
                 EmpId: `${singleEmployeeData["EmpId"]}`,
+                Name:`${singleEmployeeData["Name"]}`
             };
 
             console.log("userData", userData);

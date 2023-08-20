@@ -15,12 +15,13 @@ import { RestapiService } from "src/app/service/restapi.service";
 
 import { DataService } from "../../services";
 import { AppConstants } from "../../config/app-constants";
+import { LoginService } from "src/app/service/login.service";
 @Component({
     selector: "app-table-add-popup",
     templateUrl: "./table-add-popup.component.html",
     styleUrls: ["./table-add-popup.component.css"],
 })
-export class TableAddPopupComponent implements OnInit,OnDestroy {
+export class TableAddPopupComponent implements OnInit, OnDestroy {
     dataColumns: string[] = [];
     closeMessage = "close using directive";
     dynamicForm: FormGroup;
@@ -30,13 +31,14 @@ export class TableAddPopupComponent implements OnInit,OnDestroy {
         @Inject(MAT_DIALOG_DATA) public data: any,
         private formBuilder: FormBuilder,
         private restapiService: RestapiService,
-        private dataService: DataService
+        private dataService: DataService,
+        private authService: LoginService
     ) {
         this.dataColumns = Object.keys(this.data).filter(
             (col) => col != "Icons" && col != "id"
         );
     }
-// form validation
+    // form validation
     ngOnInit(): void {
         this.dynamicForm = this.formBuilder.group({
             EmpId: [this.data["EmpId"], Validators.required],
@@ -58,6 +60,18 @@ export class TableAddPopupComponent implements OnInit,OnDestroy {
                     console.log("res", res);
                     this.dataService.setSharedData(AppConstants.DATA_SAVED);
                 });
+            let userData = {
+                email: `${this.dynamicForm.value["EmpId"]}@test.com`,
+                password: `${this.dynamicForm.value["EmpId"]}@1234`,
+                role: "viewer",
+                EmpId: `${this.dynamicForm.value["EmpId"]}`,
+                Name: `${this.dynamicForm.value["Name"]}`,
+            };
+
+            console.log("userData", userData);
+            this.authService.addUser(userData).subscribe((res) => {
+                console.log("user added", res);
+            });
         } else {
             const updatedEmployee: any = {
                 ...this.data,
@@ -71,9 +85,5 @@ export class TableAddPopupComponent implements OnInit,OnDestroy {
                 });
         }
     }
-    ngOnDestroy(): void {
-     
-          }
-        }
-    
-
+    ngOnDestroy(): void {}
+}

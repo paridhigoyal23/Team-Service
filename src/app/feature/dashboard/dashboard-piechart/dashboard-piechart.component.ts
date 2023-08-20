@@ -25,14 +25,17 @@ export class DashboardPiechartComponent implements AfterViewInit {
     calculateSkillDistribution(): void {
         // Calculate the distribution of skills among employees
         const skillCountMap = new Map<string, number>();
-    
+
         this.res.forEach((employee: any) => {
             const skillsArray = employee.Skills.split(','); // Split the skill string into an array
     
             skillsArray.forEach((skill: string) => {
                 const trimmedSkill = skill.trim(); // Remove leading/trailing spaces
-                const currentCount = skillCountMap.get(trimmedSkill) || 0; // Use 0 as default if skill count is undefined
-                skillCountMap.set(trimmedSkill, currentCount + 1);
+    
+                if (trimmedSkill !== "") {
+                    const currentCount = skillCountMap.get(trimmedSkill) || 0; // Use 0 as default if skill count is undefined
+                    skillCountMap.set(trimmedSkill, currentCount + 1);
+                }
             });
         });
     

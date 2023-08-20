@@ -14,10 +14,11 @@ export class DashboardComponent implements OnInit {
         private trainingService: TrainingApiServiceService
     ) {}
     numberOfEmployees: number;
-    projects: number;
+    projects: Set<string> = new Set<string>();
     title = "ng2-charts-demo";
     trainingsToday: number = 0;
     trainingsThisWeek: number = 0;
+    totalUniqueProjects:number=0
     ngOnInit(): void {
         this.service.getEmployee().subscribe((res: any[]) => {
             console.log("res", res);
@@ -26,19 +27,36 @@ export class DashboardComponent implements OnInit {
             this.numberOfEmployees = res.length;
 
             
-            this.projects = res.reduce((total, employee) => {
+            // this.projects = res.reduce((total, employee) => {
                
+            //     const projectsArray = employee.Project.split(",").map(
+            //         (project: any) => project.trim()
+            //     );
+
+               
+            //     const nonEmptyProjects = projectsArray.filter(
+            //         (project: any) => project !== ""
+            //     );
+
+            //     return total + nonEmptyProjects.length;
+            // }, 0);
+            this.projects = res.reduce((allProjects, employee) => {
                 const projectsArray = employee.Project.split(",").map(
-                    (project: any) => project.trim()
+                    (project: string) => project.trim()
                 );
-
-               
+            
                 const nonEmptyProjects = projectsArray.filter(
-                    (project: any) => project !== ""
+                    (project: string) => project !== ""
                 );
-
-                return total + nonEmptyProjects.length;
-            }, 0);
+            
+                nonEmptyProjects.forEach((project:any) => {
+                    allProjects.add(project);
+                });
+            
+                return allProjects;
+            }, new Set<string>());
+            
+            this.totalUniqueProjects = this.projects.size;
         });
         this.trainingService.getTrainingData().subscribe((data: any[]) => {
             console.log("data", data);

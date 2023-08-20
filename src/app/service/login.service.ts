@@ -54,6 +54,13 @@ export class LoginService {
             return "";
         }
     }
+    public getUserName() {
+        if (this.loggedinUser) {
+            return this.loggedinUser.Name;
+        } else {
+            return "";
+        }
+    }
     logout(): void {
         this.loggedinUser = undefined;
         this.sessionStorageService.removeItem(AppConstants.USER_INFO);

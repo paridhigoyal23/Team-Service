@@ -1,17 +1,11 @@
 {
   "users": [
     {
-      "EmpId": "EMP027",
-      "email": "pernikaaggarwal23@gmail.com",
-      "password": "Work@4321",
-      "role": "viewer",
-      "id": 1
-    },
-    {
       "EmpId": "EMP1000",
       "email": "manager@gmail.com",
       "password": "Work@4321",
       "role": "manager",
+      "Name": "xyz",
       "id": 2
     },
     {
@@ -19,543 +13,676 @@
       "email": "admin@gmail.com",
       "password": "Work@4321",
       "role": "admin",
+      "Name": "Digvijay",
       "id": 3
     },
     {
-      "email": "EMP024@test.com",
-      "password": "EMP024@1234",
+      "email": "123456@test.com",
+      "password": "123456@1234",
       "role": "viewer",
-      "EmpId": "EMP024",
+      "EmpId": "123456",
+      "Name": "Pernika",
       "id": 4
     },
     {
-      "email": "EMP025@test.com",
-      "password": "EMP025@1234",
+      "email": "123457@test.com",
+      "password": "123457@1234",
       "role": "viewer",
-      "EmpId": "EMP025",
+      "EmpId": "123457",
+      "Name": "Yash",
       "id": 5
-    },
-    {
-      "email": "EMP024@test.com",
-      "password": "EMP024@1234",
-      "role": "viewer",
-      "EmpId": "EMP024",
-      "id": 6
-    },
-    {
-      "email": "EMP026@test.com",
-      "password": "EMP026@1234",
-      "role": "viewer",
-      "EmpId": "EMP026",
-      "id": 7
-    },
-    {
-      "email": "EMP027@test.com",
-      "password": "EMP027@1234",
-      "role": "viewer",
-      "EmpId": "EMP027",
-      "id": 8
-    },
-    {
-      "email": "EMP028@test.com",
-      "password": "EMP028@1234",
-      "role": "viewer",
-      "EmpId": "EMP028",
-      "id": 9
-    },
-    {
-      "email": "EMP024@test.com",
-      "password": "EMP024@1234",
-      "role": "viewer",
-      "EmpId": "EMP024",
-      "id": 10
-    },
-    {
-      "email": "EMP025@test.com",
-      "password": "EMP025@1234",
-      "role": "viewer",
-      "EmpId": "EMP025",
-      "id": 11
-    },
-    {
-      "email": "EMP026@test.com",
-      "password": "EMP026@1234",
-      "role": "viewer",
-      "EmpId": "EMP026",
-      "id": 12
-    },
-    {
-      "email": "EMP027@test.com",
-      "password": "EMP027@1234",
-      "role": "viewer",
-      "EmpId": "EMP027",
-      "id": 13
-    },
-    {
-      "email": "EMP028@test.com",
-      "password": "EMP028@1234",
-      "role": "viewer",
-      "EmpId": "EMP028",
-      "id": 14
-    },
-    {
-      "email": "EMP024@test.com",
-      "password": "EMP024@1234",
-      "role": "viewer",
-      "EmpId": "EMP024",
-      "id": 15
-    },
-    {
-      "email": "EMP025@test.com",
-      "password": "EMP025@1234",
-      "role": "viewer",
-      "EmpId": "EMP025",
-      "id": 16
-    },
-    {
-      "email": "EMP026@test.com",
-      "password": "EMP026@1234",
-      "role": "viewer",
-      "EmpId": "EMP026",
-      "id": 17
-    },
-    {
-      "email": "EMP027@test.com",
-      "password": "EMP027@1234",
-      "role": "viewer",
-      "EmpId": "EMP027",
-      "id": 18
-    },
-    {
-      "email": "EMP028@test.com",
-      "password": "EMP028@1234",
-      "role": "viewer",
-      "EmpId": "EMP028",
-      "id": 19
     }
   ],
   "employeesData": [
     {
-      "EmpId": "EMP027",
+      "EmpId": "123456",
       "Name": "Pernika",
-      "Grade": "A3",
-      "Designation": "Jn Software Engg",
-      "Project": "Team Service,SMS",
-      "Skills": "Java",
-      "Location": "Bangalore",
-      "ContactNo": "94772-88272",
-      "Icons": "",
-      "id": 1
-    },
-    {
-      "EmpId": "EMP028",
-      "Name": "Megha",
-      "Grade": "B2",
-      "Designation": "Senior software Engg",
-      "Project": "Team Service ",
-      "Skills": "Angular",
-      "Location": "Noida",
-      "ContactNo": "749384334",
-      "id": 2
-    },
-    {
-      "EmpId": "EMP024",
-      "Name": "Yash",
-      "Grade": "A3",
-      "Designation": "Senior Software Engg",
-      "Project": "Java",
-      "Skills": "C++",
-      "Location": "Noida",
-      "ContactNo": "78544-65645",
-      "id": 3
-    },
-    {
-      "EmpId": "EMP024",
-      "Name": "Yash",
-      "Grade": "A1",
-      "Designation": "Jn Software Engg",
-      "Project": "Student Management",
-      "Skills": "Kubernates",
-      "Location": "bdueuf",
-      "ContactNo": "75374-64647",
-      "id": 4
-    },
-    {
-      "EmpId": "EMP024",
-      "Name": "Yash",
-      "Grade": "A1",
-      "Designation": "Jn Software Engg",
-      "Project": "jhdue",
-      "Skills": "VueJs",
-      "Location": "bdueuf",
-      "ContactNo": "76566-76658",
-      "id": 5
-    },
-    {
-      "EmpId": "EMP027",
-      "Name": "Pernika",
-      "Grade": "A2",
-      "Designation": "Sn Software Engg",
-      "Project": "",
-      "Skills": "Angular",
-      "Location": "",
-      "ContactNo": "",
-      "id": 6
-    },
-    {
-      "EmpId": "EMP026",
-      "Name": "Megha",
-      "Grade": "A3",
-      "Designation": "Tech Lead",
-      "Project": "",
-      "Skills": "Java",
-      "Location": "",
-      "ContactNo": "",
-      "id": 7
-    },
-    {
-      "EmpId": "EMP027",
-      "Name": "Vishal",
-      "Grade": "B1",
-      "Designation": "Architect",
-      "Project": "",
-      "Skills": "C++",
-      "Location": "",
-      "ContactNo": "",
-      "id": 8
-    },
-    {
-      "EmpId": "EMP028",
-      "Name": "Nidhi",
-      "Grade": "B2",
-      "Designation": "Software Lead",
-      "Project": "",
-      "Skills": "Kubernates",
-      "Location": "",
-      "ContactNo": "",
-      "id": 9
-    },
-    {
-      "EmpId": "EMP012",
-      "Name": "Yash",
       "Grade": "A3",
       "Designation": "Senior Tech Lead",
-      "Project": "Java Project",
-      "Skills": "VueJs",
+      "Project": "Team Services",
+      "Skills": "Java",
       "Location": "Noida",
-      "ContactNo": "73432-43221",
-      "id": 10
+      "ContactNo": "75754-86584",
+      "id": 1,
+      "Icons": ""
     },
     {
-      "EmpId": "EMP024",
+      "EmpId": "123457",
       "Name": "Yash",
       "Grade": "A1",
-      "Designation": "Jn Software Engg",
-      "Project": "jhdue",
-      "Skills": "Angular, NextJs",
-      "Location": "bdueuf",
-      "ContactNo": "dkjhjf",
-      "id": 11
-    },
-    {
-      "EmpId": "EMP027",
-      "Name": "Pernika",
-      "Grade": "A2",
-      "Designation": "Sn Software Engg",
-      "Project": "",
+      "Designation": "Software Engineer",
+      "Project": "Team Service",
       "Skills": "Java",
-      "Location": "",
-      "ContactNo": "",
-      "id": 12
-    },
-    {
-      "EmpId": "EMP026",
-      "Name": "Megha",
-      "Grade": "A3",
-      "Designation": "Tech Lead",
-      "Project": "",
-      "Skills": "C++",
-      "Location": "",
-      "ContactNo": "",
-      "id": 13
-    },
-    {
-      "EmpId": "EMP027",
-      "Name": "Vishal",
-      "Grade": "B1",
-      "Designation": "Architect",
-      "Project": "",
-      "Skills": "Kubernates",
-      "Location": "",
-      "ContactNo": "",
-      "id": 14
-    },
-    {
-      "EmpId": "EMP028",
-      "Name": "Nidhi",
-      "Grade": "B2",
-      "Designation": "Software Lead",
-      "Project": "",
-      "Skills": "VueJs",
-      "Location": "",
-      "ContactNo": "",
-      "id": 15
+      "Location": "Noida",
+      "ContactNo": "75785-78686",
+      "id": 2
     }
   ],
   "trainingData": [
     {
-      "TrainingTitle": "Javascript",
-      "TrainingType": "Corporate",
-      "PlannedDate": "2023-08-16T18:30:00.000Z",
-      "StartDate": "2023-08-16T18:30:00.000Z",
-      "EndDate": "2023-08-16T18:30:00.000Z",
+      "TrainingTitle": "Java",
+      "TrainingType": "Self",
+      "PlannedDate": "2023-08-17T18:30:00.000Z",
+      "StartDate": "2023-08-19T18:30:00.000Z",
+      "EndDate": "2023-08-25T18:30:00.000Z",
       "Reference": "",
-      "Name": "Megha(EMP028)",
+      "Name": "Pernika(123456)",
       "Status": "In Progress",
       "Mode": "offline",
       "id": 1
-    },
-    {
-      "TrainingTitle": "Java",
-      "TrainingType": "Corporate",
-      "PlannedDate": "2023-08-16T18:30:00.000Z",
-      "StartDate": "2023-08-16T18:30:00.000Z",
-      "EndDate": "2023-08-29T18:30:00.000Z",
-      "Reference": "https://fontawesome.com/icons/arrow-up-right-from-square?f=classic&s=solid",
-      "Name": "Yash(EMP024)",
-      "Status": "In Progress",
-      "Mode": "offline",
-      "id": 2
-    },
-    {
-      "TrainingTitle": "Angular",
-      "TrainingType": "Corporate",
-      "PlannedDate": "2023-08-17T18:30:00.000Z",
-      "StartDate": "2023-08-17T18:30:00.000Z",
-      "EndDate": "2023-08-22T18:30:00.000Z",
-      "Reference": "",
-      "Name": "Pernika(EMP025)",
-      "Status": "Done",
-      "Mode": "offline",
-      "id": 3
-    },
-    {
-      "TrainingTitle": "Angular",
-      "TrainingType": "Corporate",
-      "PlannedDate": "2023-08-17T18:30:00.000Z",
-      "StartDate": "2023-08-09T18:30:00.000Z",
-      "EndDate": "2023-08-15T18:30:00.000Z",
-      "Reference": "",
-      "Name": "Nidhi(EMP028)",
-      "Status": "Done",
-      "Mode": "offline",
-      "id": 4
     }
   ],
   "employeeAttendances": [
     {
-      "name": "Vishal",
-      "TO": "18",
-      "TH": "3",
-      "TL": "0",
-      "month": "2023-7",
+      "month": "2023-08",
+      "name": "Yash(123457)",
+      "TO": 13,
+      "TH": 10,
+      "TL": 0,
       "values": [
         {
-          "2023-07-01": ""
+          "2023-08-01": "H"
         },
         {
-          "2023-07-02": ""
+          "2023-08-02": "O"
         },
         {
-          "2023-07-03": "O"
+          "2023-08-03": "H"
         },
         {
-          "2023-07-04": "O"
+          "2023-08-04": "H"
         },
         {
-          "2023-07-05": "O"
+          "2023-08-05": "BH"
         },
         {
-          "2023-07-06": "O"
+          "2023-08-06": "BH"
         },
         {
-          "2023-07-07": "O"
+          "2023-08-07": "L"
         },
         {
-          "2023-07-08": ""
+          "2023-08-08": "L"
         },
         {
-          "2023-07-09": ""
+          "2023-08-09": "H"
         },
         {
-          "2023-07-10": "O"
+          "2023-08-10": "H"
         },
         {
-          "2023-07-11": "O"
+          "2023-08-11": "H"
         },
         {
-          "2023-07-12": "O"
+          "2023-08-12": "BH"
         },
         {
-          "2023-07-13": "O"
+          "2023-08-13": "BH"
         },
         {
-          "2023-07-14": "O"
+          "2023-08-14": "H"
         },
         {
-          "2023-07-15": ""
+          "2023-08-15": "O"
         },
         {
-          "2023-07-16": ""
+          "2023-08-16": "O"
         },
         {
-          "2023-07-17": "O"
+          "2023-08-17": "H"
         },
         {
-          "2023-07-18": "O"
+          "2023-08-18": "H"
         },
         {
-          "2023-07-19": "O"
+          "2023-08-19": "BH"
         },
         {
-          "2023-07-20": "O"
+          "2023-08-20": "BH"
         },
         {
-          "2023-07-21": "O"
+          "2023-08-21": "O"
         },
         {
-          "2023-07-22": ""
+          "2023-08-22": "O"
         },
         {
-          "2023-07-23": ""
+          "2023-08-23": "O"
         },
         {
-          "2023-07-24": "H"
+          "2023-08-24": "H"
         },
         {
-          "2023-07-25": "O"
+          "2023-08-25": "H"
         },
         {
-          "2023-07-26": "O"
+          "2023-08-26": "BH"
         },
         {
-          "2023-07-27": "H"
+          "2023-08-27": "BH"
         },
         {
-          "2023-07-28": "O"
+          "2023-08-28": "O"
         },
         {
-          "2023-07-29": ""
+          "2023-08-29": "O"
         },
         {
-          "2023-07-30": ""
+          "2023-08-30": "O"
         },
         {
-          "2023-07-31": "H"
+          "2023-08-31": "H"
         }
-      ]
+      ],
+      "id": 3
     },
     {
-      "name": "Paridhi",
-      "TO": "17",
-      "TH": "3",
-      "TL": "1",
-      "month": "2023-7",
+      "month": "2023-09",
+      "name": "Yash(123457)",
+      "TO": 12,
+      "TH": 9,
+      "TL": 0,
       "values": [
         {
-          "2023-07-01": ""
+          "2023-09-01": "H"
         },
         {
-          "2023-07-02": ""
+          "2023-09-02": "BH"
         },
         {
-          "2023-07-03": "L"
+          "2023-09-03": "BH"
         },
         {
-          "2023-07-04": "O"
+          "2023-09-04": "O"
         },
         {
-          "2023-07-05": "O"
+          "2023-09-05": "O"
         },
         {
-          "2023-07-06": "O"
+          "2023-09-06": "O"
         },
         {
-          "2023-07-07": "O"
+          "2023-09-07": "H"
         },
         {
-          "2023-07-08": ""
+          "2023-09-08": "H"
         },
         {
-          "2023-07-09": ""
+          "2023-09-09": "BH"
         },
         {
-          "2023-07-10": "O"
+          "2023-09-10": "BH"
         },
         {
-          "2023-07-11": "O"
+          "2023-09-11": "O"
         },
         {
-          "2023-07-12": "O"
+          "2023-09-12": "O"
         },
         {
-          "2023-07-13": "O"
+          "2023-09-13": "O"
         },
         {
-          "2023-07-14": "O"
+          "2023-09-14": "H"
         },
         {
-          "2023-07-15": ""
+          "2023-09-15": "H"
         },
         {
-          "2023-07-16": ""
+          "2023-09-16": "BH"
         },
         {
-          "2023-07-17": "O"
+          "2023-09-17": "BH"
         },
         {
-          "2023-07-18": "O"
+          "2023-09-18": "O"
         },
         {
-          "2023-07-19": "O"
+          "2023-09-19": "O"
         },
         {
-          "2023-07-20": "O"
+          "2023-09-20": "O"
         },
         {
-          "2023-07-21": "O"
+          "2023-09-21": "H"
         },
         {
-          "2023-07-22": ""
+          "2023-09-22": "H"
         },
         {
-          "2023-07-23": ""
+          "2023-09-23": "BH"
         },
         {
-          "2023-07-24": "H"
+          "2023-09-24": "BH"
         },
         {
-          "2023-07-25": "O"
+          "2023-09-25": "O"
         },
         {
-          "2023-07-26": "O"
+          "2023-09-26": "O"
         },
         {
-          "2023-07-27": "H"
+          "2023-09-27": "O"
         },
         {
-          "2023-07-28": "O"
+          "2023-09-28": "H"
         },
         {
-          "2023-07-29": ""
+          "2023-09-29": "H"
         },
         {
-          "2023-07-30": ""
-        },
-        {
-          "2023-07-31": "H"
+          "2023-09-30": "BH"
         }
-      ]
+      ],
+      "id": 4
+    },
+    {
+      "month": "2023-10",
+      "name": "Yash(123457)",
+      "TO": 12,
+      "TH": 10,
+      "TL": 0,
+      "values": [
+        {
+          "2023-10-01": "BH"
+        },
+        {
+          "2023-10-02": "H"
+        },
+        {
+          "2023-10-03": "H"
+        },
+        {
+          "2023-10-04": "O"
+        },
+        {
+          "2023-10-05": "O"
+        },
+        {
+          "2023-10-06": "O"
+        },
+        {
+          "2023-10-07": "BH"
+        },
+        {
+          "2023-10-08": "BH"
+        },
+        {
+          "2023-10-09": "H"
+        },
+        {
+          "2023-10-10": "H"
+        },
+        {
+          "2023-10-11": "O"
+        },
+        {
+          "2023-10-12": "O"
+        },
+        {
+          "2023-10-13": "O"
+        },
+        {
+          "2023-10-14": "BH"
+        },
+        {
+          "2023-10-15": "BH"
+        },
+        {
+          "2023-10-16": "H"
+        },
+        {
+          "2023-10-17": "H"
+        },
+        {
+          "2023-10-18": "O"
+        },
+        {
+          "2023-10-19": "O"
+        },
+        {
+          "2023-10-20": "O"
+        },
+        {
+          "2023-10-21": "BH"
+        },
+        {
+          "2023-10-22": "BH"
+        },
+        {
+          "2023-10-23": "H"
+        },
+        {
+          "2023-10-24": "H"
+        },
+        {
+          "2023-10-25": "O"
+        },
+        {
+          "2023-10-26": "O"
+        },
+        {
+          "2023-10-27": "O"
+        },
+        {
+          "2023-10-28": "BH"
+        },
+        {
+          "2023-10-29": "BH"
+        },
+        {
+          "2023-10-30": "H"
+        },
+        {
+          "2023-10-31": "H"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "month": "2023-08",
+      "name": "Pernika(123456)",
+      "values": [
+        {
+          "2023-08-01": "O"
+        },
+        {
+          "2023-08-02": "O"
+        },
+        {
+          "2023-08-03": "H"
+        },
+        {
+          "2023-08-04": "H"
+        },
+        {
+          "2023-08-05": "BH"
+        },
+        {
+          "2023-08-06": "BH"
+        },
+        {
+          "2023-08-07": "O"
+        },
+        {
+          "2023-08-08": "O"
+        },
+        {
+          "2023-08-09": "O"
+        },
+        {
+          "2023-08-10": "H"
+        },
+        {
+          "2023-08-11": "H"
+        },
+        {
+          "2023-08-12": "BH"
+        },
+        {
+          "2023-08-13": "BH"
+        },
+        {
+          "2023-08-14": "O"
+        },
+        {
+          "2023-08-15": "O"
+        },
+        {
+          "2023-08-16": "H"
+        },
+        {
+          "2023-08-17": "H"
+        },
+        {
+          "2023-08-18": "H"
+        },
+        {
+          "2023-08-19": "BH"
+        },
+        {
+          "2023-08-20": "BH"
+        },
+        {
+          "2023-08-21": "H"
+        },
+        {
+          "2023-08-22": "L"
+        },
+        {
+          "2023-08-23": "O"
+        },
+        {
+          "2023-08-24": "H"
+        },
+        {
+          "2023-08-25": "H"
+        },
+        {
+          "2023-08-26": "BH"
+        },
+        {
+          "2023-08-27": "BH"
+        },
+        {
+          "2023-08-28": "O"
+        },
+        {
+          "2023-08-29": "O"
+        },
+        {
+          "2023-08-30": "O"
+        },
+        {
+          "2023-08-31": "H"
+        }
+      ],
+      "TO": 11,
+      "TH": 11,
+      "TL": 1,
+      "id": 7
+    },
+    {
+      "month": "2023-09",
+      "name": "Pernika(123456)",
+      "values": [
+        {
+          "2023-09-01": "H"
+        },
+        {
+          "2023-09-02": "BH"
+        },
+        {
+          "2023-09-03": "BH"
+        },
+        {
+          "2023-09-04": "O"
+        },
+        {
+          "2023-09-05": "O"
+        },
+        {
+          "2023-09-06": "O"
+        },
+        {
+          "2023-09-07": "H"
+        },
+        {
+          "2023-09-08": "H"
+        },
+        {
+          "2023-09-09": "BH"
+        },
+        {
+          "2023-09-10": "BH"
+        },
+        {
+          "2023-09-11": "O"
+        },
+        {
+          "2023-09-12": "O"
+        },
+        {
+          "2023-09-13": "O"
+        },
+        {
+          "2023-09-14": "H"
+        },
+        {
+          "2023-09-15": "H"
+        },
+        {
+          "2023-09-16": "BH"
+        },
+        {
+          "2023-09-17": "BH"
+        },
+        {
+          "2023-09-18": "O"
+        },
+        {
+          "2023-09-19": "O"
+        },
+        {
+          "2023-09-20": "O"
+        },
+        {
+          "2023-09-21": "H"
+        },
+        {
+          "2023-09-22": "H"
+        },
+        {
+          "2023-09-23": "BH"
+        },
+        {
+          "2023-09-24": "BH"
+        },
+        {
+          "2023-09-25": "O"
+        },
+        {
+          "2023-09-26": "O"
+        },
+        {
+          "2023-09-27": "O"
+        },
+        {
+          "2023-09-28": "H"
+        },
+        {
+          "2023-09-29": "H"
+        },
+        {
+          "2023-09-30": "BH"
+        }
+      ],
+      "TO": 12,
+      "TH": 9,
+      "TL": 0,
+      "id": 9
+    },
+    {
+      "month": "2023-09",
+      "name": "Pernika(123456)",
+      "values": [
+        {
+          "2023-09-01": "H"
+        },
+        {
+          "2023-09-02": "BH"
+        },
+        {
+          "2023-09-03": "BH"
+        },
+        {
+          "2023-09-04": "O"
+        },
+        {
+          "2023-09-05": "O"
+        },
+        {
+          "2023-09-06": "O"
+        },
+        {
+          "2023-09-07": "H"
+        },
+        {
+          "2023-09-08": "H"
+        },
+        {
+          "2023-09-09": "BH"
+        },
+        {
+          "2023-09-10": "BH"
+        },
+        {
+          "2023-09-11": "O"
+        },
+        {
+          "2023-09-12": "O"
+        },
+        {
+          "2023-09-13": "O"
+        },
+        {
+          "2023-09-14": "H"
+        },
+        {
+          "2023-09-15": "H"
+        },
+        {
+          "2023-09-16": "BH"
+        },
+        {
+          "2023-09-17": "BH"
+        },
+        {
+          "2023-09-18": "O"
+        },
+        {
+          "2023-09-19": "O"
+        },
+        {
+          "2023-09-20": "O"
+        },
+        {
+          "2023-09-21": "H"
+        },
+        {
+          "2023-09-22": "H"
+        },
+        {
+          "2023-09-23": "BH"
+        },
+        {
+          "2023-09-24": "BH"
+        },
+        {
+          "2023-09-25": "O"
+        },
+        {
+          "2023-09-26": "O"
+        },
+        {
+          "2023-09-27": "O"
+        },
+        {
+          "2023-09-28": "H"
+        },
+        {
+          "2023-09-29": "H"
+        },
+        {
+          "2023-09-30": "BH"
+        }
+      ],
+      "TO": 12,
+      "TH": 9,
+      "TL": 0,
+      "id": {
+        "MAX_SAFE_INTEGER": 9007199254740991
+      }
     }
   ]
 }
