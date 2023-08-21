@@ -246,13 +246,12 @@ export class WorkFromOfficeComponent {
         // Check if the data already exists for the selected month and name
         this.forecastService
             .getEmployeeAttendanceByMonthAndName(month, val.name)
-            .subscribe((existingData) => {
-                if (existingData && existingData.length > 0) {
+            .subscribe((attendances) => {
+                if (attendances && attendances.length > 0) {
                     // Data already exists, find the record to update based on the ID
-                    const matchingRecord = existingData.find((record: any) => {
+                    const matchingRecord = attendances.find((record: any) => {
                         // Compare relevant fields here to identify a match
                         // Example: return record.name === val.name && record.values === val.values;
-                        record.id === val.id;
                     });
 
                     if (matchingRecord) {
@@ -263,8 +262,6 @@ export class WorkFromOfficeComponent {
                                 console.log("update response", res);
                                 this.getDataAsPerUserRole();
                             });
-                    } else {
-                        console.log("No matching record found for update.");
                     }
                 } else {
                     // Data doesn't exist, create a new entry
@@ -285,7 +282,7 @@ export class WorkFromOfficeComponent {
         let TO = 0;
         let TH = 0;
         let TL = 0;
-        id:number;
+
         for (let day = 1; day <= totalDays; day++) {
             const date = new Date(year, month - 1, day);
             const formattedDate = new Date(year, month - 1, day + 1)
@@ -311,7 +308,6 @@ export class WorkFromOfficeComponent {
             TO,
             TH,
             TL,
-            id:number
         };
     }
 }

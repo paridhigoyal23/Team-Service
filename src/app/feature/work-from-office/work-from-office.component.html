@@ -24,7 +24,9 @@
                                 <div
                                     class="flex-container mt-2 ms-5"
                                     *ngIf="
-                                        role !== 'admin' && role !== 'manager' && formattedDate<  forcastMonth
+                                        role !== 'admin' &&
+                                        role !== 'manager' &&
+                                        formattedDate < forcastMonth
                                     "
                                 >
                                     WFO Preferences
@@ -56,9 +58,12 @@
         </div>
     </div>
 </div>
-
+<div *ngIf="!attendances || attendances.length === 0" class="text-center fs-4 card shadow ms-4 me-4" >
+    No data available
+</div>
 <div
     class="card-body ms-4 me-4"
+    *ngIf="attendances && attendances.length > 0"
     style="
         border: 1px solid #999;
         border-radius: 8px;
@@ -104,8 +109,17 @@
         </table>
     </div>
 </div>
-<div style="text-align: left" class="ms-5 text-primary e-4 mt-2 fst-italic" >
-    <i class="fa-solid fa-circle-info me-2" style="color: orange;"></i>
-    <span *ngIf="role=='viewer'" >Click on a cell to change forcast of current and future dates</span>
-    <span *ngIf="role!=='viewer'" >Click on a cell to change forcast</span>
+<div
+    style="text-align: left"
+    class="ms-5 text-primary e-4 mt-2 fst-italic"
+    *ngIf="role == 'viewer' && attendances && attendances.length > 0"
+>
+    <i class="fa-solid fa-circle-info me-2" style="color: orange"></i>
+    <span class="text-primary"
+        >Click on a cell to change forcast of current and future dates</span
+    >
+</div>
+<div *ngIf="role !== 'viewer' && attendances && attendances.length > 0">
+    <i class="fa-solid fa-circle-info me-2 ms-3" style="color: orange"></i>
+    <span class="text-primary">Click on a cell to change forcast</span>
 </div>
