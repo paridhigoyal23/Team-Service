@@ -26,7 +26,7 @@
                                     *ngIf="
                                         role !== 'admin' &&
                                         role !== 'manager' &&
-                                        formattedDate < forcastMonth
+                                        formattedDate <= forcastMonth &&attendances && attendances.length == 0
                                     "
                                 >
                                     WFO Preferences
@@ -58,8 +58,8 @@
         </div>
     </div>
 </div>
-<div *ngIf="!attendances || attendances.length === 0" class="text-center fs-4 card shadow ms-4 me-4" >
-    No data available
+<div *ngIf="!attendances || attendances.length === 0" class="text-center fs-4 card shadow ms-4 me-4" style="height:80px" >
+    <div class="mt-3" style="color: #777;">No data available</div>
 </div>
 <div
     class="card-body ms-4 me-4"

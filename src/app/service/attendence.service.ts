@@ -5,7 +5,7 @@ import { ApiEndpoints } from "../core/config/api-endpoints";
 @Injectable({
     providedIn: "root",
 })
-export class AttendenceServiceComponent {
+export class AttendenceService {
     constructor(private http: HttpClient) {}
     getAttendence(): Observable<any> {
         return this.http.get<any>(ApiEndpoints.EMPLOYEEATTENDENCES);

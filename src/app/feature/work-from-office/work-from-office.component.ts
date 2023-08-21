@@ -6,7 +6,7 @@ import {
     AfterViewInit,
 } from "@angular/core";
 import { number } from "echarts";
-import { AttendenceServiceComponent } from "src/app/service/attendence.service";
+import { AttendenceService } from "src/app/service/attendence.service";
 import { LoginService } from "src/app/service/login.service";
 
 @Component({
@@ -23,8 +23,8 @@ export class WorkFromOfficeComponent {
     currentDate: Date = new Date();
     formattedDate: string;
     constructor(
-        private forecastService: AttendenceServiceComponent,
-        private loginService: LoginService
+        private forecastService: AttendenceService,
+        private loginService: LoginService,private attendanceService:AttendenceService
     ) {
         this.role = this.loginService.getUserRole();
         this.EmpId = this.loginService.getUserId();
@@ -154,11 +154,12 @@ export class WorkFromOfficeComponent {
         const forcastedValue = Object.values(forcastValue)[0];
 
         const currentDate = new Date();
+        currentDate.setHours(0, 0, 0, 0);
         const forecastDateObj = new Date(forcastedDate);
-
+        forecastDateObj.setHours(0, 0, 0, 0);
         if (this.role === "admin" || this.role === "manager") {
             this.changeForcast(forcastedDate, forcastedValue, empIndex);
-        } else if (forecastDateObj > currentDate) {
+        } else if (forecastDateObj >= currentDate) {
             this.changeForcast(forcastedDate, forcastedValue, empIndex);
         }
     }
