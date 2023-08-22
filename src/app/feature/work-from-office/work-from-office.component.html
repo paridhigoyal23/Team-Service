@@ -13,7 +13,7 @@
                                     #monthInput
                                     type="month"
                                     [(ngModel)]="forcastMonth"
-                                    style="width: 40%"
+                                    style="width: 50%"
                                     name="forecast"
                                     (change)="getSelectedMonthForcast()"
                                 />
@@ -26,8 +26,11 @@
                                     *ngIf="
                                         role !== 'admin' &&
                                         role !== 'manager' &&
-                                        formattedDate <= forcastMonth &&attendances && attendances.length == 0
-                                    "
+                                        (formattedDate <= forcastMonth) &&
+                                        
+                                        shouldShowPreferences(formattedDate)
+                                        "
+                                    
                                 >
                                     WFO Preferences
                                     <div *ngFor="let days of daysWeek">
@@ -58,8 +61,12 @@
         </div>
     </div>
 </div>
-<div *ngIf="!attendances || attendances.length === 0" class="text-center fs-4 card shadow ms-4 me-4" style="height:80px" >
-    <div class="mt-3" style="color: #777;">No data available</div>
+<div
+    *ngIf="!attendances || attendances.length === 0"
+    class="text-center fs-4 card shadow ms-4 me-4"
+    style="height: 80px"
+>
+    <div class="mt-3" style="color: #777">No data available</div>
 </div>
 <div
     class="card-body ms-4 me-4"
@@ -120,6 +127,6 @@
     >
 </div>
 <div *ngIf="role !== 'viewer' && attendances && attendances.length > 0">
-    <i class="fa-solid fa-circle-info me-2 ms-3" style="color: orange"></i>
+    <i class="fa-solid fa-circle-info me-2 ms-4 mt-2" style="color: orange"></i>
     <span class="text-primary">Click on a cell to change forcast</span>
 </div>

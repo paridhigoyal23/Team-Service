@@ -156,9 +156,5 @@ export class DashboardComponent implements OnInit {
             
         );
         this.employeesLeave = this.employeesLeave;
-       
-
-    
 }
-
 }

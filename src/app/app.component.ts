@@ -10,5 +10,6 @@ import { User } from "./core/interfaces";
 export class AppComponent {
     title = "internaldashboard";
     loggedinUser: User | undefined;
+    
     constructor(public loginService: LoginService) {}
 }

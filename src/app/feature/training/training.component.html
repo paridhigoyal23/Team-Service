@@ -19,16 +19,14 @@
                                 *ngIf="role == 'admin' || role == 'manager'"
                                 (click)="openButton()"
                                 class="border-0 add-training bg-primary text-white rounded-5"
-                                
-                                matTooltip="Add Employee List"
+                                matTooltip="Add Training"
                             >
                                 <i class="fa-sharp fa-solid fa-plus"></i>
                             </button>
                             <button
                                 class="border-0 download-training ms-1 bg-success text-white"
-                                
                                 (click)="exportEmployeeData()"
-                                matTooltip="Download Employee List"
+                                matTooltip="Download Training List"
                             >
                                 <i
                                     class="fa fa-download"
@@ -73,8 +71,11 @@
                                             matTooltip="Training"
                                             (click)="openLink(data.Reference)"
                                         >
-                                        <i class="fa-solid fa-chalkboard"></i>
+                                            <i
+                                                class="text-success fa-solid fa-link"
+                                            ></i>
                                         </a>
+                                        <div [class]="copiedClass" id="copied-message">Link copied!</div>
                                     </ng-container>
                                     <ng-container
                                         *ngIf="

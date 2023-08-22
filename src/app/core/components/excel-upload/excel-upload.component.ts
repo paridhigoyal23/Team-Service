@@ -16,6 +16,7 @@ export class ExcelUploadComponent {
     data: any[] = [];
     selectedFile: File | null;
     apiResponse: any;
+    isUploadClicked = false;
     constructor(
         private excelImportService: ExcelUploadService,
         public dialogRef: MatDialogRef<ExcelUploadComponent>,
@@ -26,11 +27,9 @@ export class ExcelUploadComponent {
     recordCount: number = 0;
     // Uploading Excel File
     onFileSelected(event: any) {
-        
-        
         this.selectedFile = event.target.files[0];
         const target: DataTransfer = <DataTransfer>event.target;
-      
+
         if (target.files.length !== 1)
             throw new Error("Cannot use multiple files");
         const reader: FileReader = new FileReader();
@@ -43,12 +42,12 @@ export class ExcelUploadComponent {
             this.data = XLXS.utils.sheet_to_json(ws, {
                 defval: "",
             });
-            this.recordCount = this.data.length;
+
             console.log("this.data", this.data);
         };
         reader.readAsBinaryString(target.files[0]);
     }
-// On Upload employee list displayed in the employee table
+    // On Upload employee list displayed in the employee table
     onUpload() {
         if (!this.selectedFile) {
             console.error("No file selected.");
@@ -69,7 +68,7 @@ export class ExcelUploadComponent {
                 password: `${singleEmployeeData["EmpId"]}@1234`,
                 role: "viewer",
                 EmpId: `${singleEmployeeData["EmpId"]}`,
-                Name:`${singleEmployeeData["Name"]}`
+                Name: `${singleEmployeeData["Name"]}`,
             };
 
             console.log("userData", userData);
@@ -81,8 +80,11 @@ export class ExcelUploadComponent {
                 this.dataService.setSharedData(AppConstants.DATA_SAVED);
             }, 2000);
         }
+        this.recordCount = this.data.length;
+        this.isUploadClicked = true;
+        console.log("readcount", this.recordCount);
     }
-// close popup
+    // close popup
     onClick(): void {
         this.dialogRef.close();
     }

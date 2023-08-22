@@ -27,18 +27,18 @@ export class DashboardPiechartComponent implements AfterViewInit {
         const skillCountMap = new Map<string, number>();
 
         this.res.forEach((employee: any) => {
-            const skillsArray = employee.Skills.split(','); // Split the skill string into an array
-    
+            const skillsArray = employee.Skills.split(","); // Split the skill string into an array
+
             skillsArray.forEach((skill: string) => {
                 const trimmedSkill = skill.trim(); // Remove leading/trailing spaces
-    
+
                 if (trimmedSkill !== "") {
                     const currentCount = skillCountMap.get(trimmedSkill) || 0; // Use 0 as default if skill count is undefined
                     skillCountMap.set(trimmedSkill, currentCount + 1);
                 }
             });
         });
-    
+
         this.skillDistribution = Array.from(skillCountMap.entries()).map(
             ([skill, count]) => ({ skill, count })
         );
@@ -48,42 +48,42 @@ export class DashboardPiechartComponent implements AfterViewInit {
         const skillChart = echarts.init(document.getElementById("pie-chart"));
         const option = {
             title: {
-                text: 'Skill Distribution among Employees',
-                left: 'center'
+                text: "Team Competency",
+                left: "center",
             },
             tooltip: {
-                trigger: 'item',
-                formatter: '{a} <br/>{b}: {c} ({d}%)'
+                trigger: "item",
+                formatter: "{a} <br/>{b}: {c} ({d}%)",
             },
             legend: {
-                orient: 'vertical', // You can also use 'horizontal'
-                left: 'left',      // Adjust the position as needed
-                data: this.skillDistribution.map(entry => entry.skill)
+                orient: "vertical", // You can also use 'horizontal'
+                left: "left", // Adjust the position as needed
+                data: this.skillDistribution.map((entry) => entry.skill),
             },
             series: [
                 {
-                    name: 'Skills',
-                    type: 'pie',
-                    radius: '50%',
-                    data: this.skillDistribution.map(entry => ({
+                    name: "Skills",
+                    type: "pie",
+                    radius: "50%",
+                    data: this.skillDistribution.map((entry) => ({
                         value: entry.count,
-                        name: entry.skill
+                        name: entry.skill,
                     })),
                     label: {
                         show: true, // Show labels on each slice
-                        formatter: '{b}: {c} ({d}%)'
+                        formatter: "{b}: {c} ({d}%)",
                     },
                     emphasis: {
                         itemStyle: {
                             shadowBlur: 10,
                             shadowOffsetX: 0,
-                            shadowColor: 'rgba(0, 0, 0, 0.5)'
-                        }
-                    }
-                }
-            ]
+                            shadowColor: "rgba(0, 0, 0, 0.5)",
+                        },
+                    },
+                },
+            ],
         };
-    
+
         skillChart.setOption(option);
-}
+    }
 }

@@ -16,6 +16,7 @@ import { Dialog } from "@angular/cdk/dialog";
 
 import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { TrainingApiServiceService } from "src/app/service/training-api-service.service";
+import { Clipboard } from '@angular/cdk/clipboard';
 import { MatIcon } from "@angular/material/icon";
 import { DataService } from "src/app/core/services";
 import { Subscription } from "rxjs";
@@ -42,6 +43,7 @@ export class TrainingComponent implements OnInit, OnChanges {
         "Status",
         "Actions",
     ];
+    copiedClass: string = 'hidden';
     dataSource: MatTableDataSource<Element>;
     EmpId: any;
     employees: Employee[] = [];
@@ -54,7 +56,8 @@ export class TrainingComponent implements OnInit, OnChanges {
         private dataService: DataService,
         private loginService: LoginService,
         private restApiService: RestapiService,
-        private router: Router
+        private router: Router,
+        private clipboard:Clipboard
     ) {
         this.dataSource = new MatTableDataSource<Element>([]);
         this.dataSource = new MatTableDataSource();
@@ -137,8 +140,12 @@ export class TrainingComponent implements OnInit, OnChanges {
     }
 
     openLink(link: string) {
-        console.log("link", link);
-        this.router.navigateByUrl(link);
+        this.copiedClass = '';
+        this.clipboard.copy(link);
+
+        setTimeout(() => {
+            this.copiedClass = 'hidden';
+        }, 2000)
     }
     ngOnDestroy(): void {
         if (this.subscription) {

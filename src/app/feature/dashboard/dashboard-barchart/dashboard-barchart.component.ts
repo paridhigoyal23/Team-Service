@@ -37,7 +37,7 @@ export class DashboardBarchartComponent implements AfterViewInit {
         const barChart = echarts.init(document.getElementById("bar-chart"));
         const option = {
             title: {
-                text: "Employee Distribution by Grade",
+                text: "Team Members by Grade",
                 left: "center",
             },
             tooltip: {
@@ -53,16 +53,18 @@ export class DashboardBarchartComponent implements AfterViewInit {
                     rotate: 0, // Rotate labels for better visibility
                     interval: 0, // Show all labels
                 },
+                name: "Grade",
             },
             yAxis: {
                 type: "value",
                 name: "Count",
+                interval: 1,
             },
             series: [
                 {
                     name: "Employees",
                     type: "bar",
-                    data: this.gradeDistribution.map((entry) => entry.count), // Bar heights
+                    data: this.gradeDistribution.map((entry) => entry.count),
                 },
             ],
         };

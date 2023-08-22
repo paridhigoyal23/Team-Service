@@ -21,6 +21,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import {FormControl} from '@angular/forms';
 import { MatNativeDateModule } from "@angular/material/core";
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 const routes: Routes = [
     {
      path: "", 
@@ -29,7 +30,7 @@ const routes: Routes = [
     ];
 @NgModule({
     declarations: [TrainingComponent, AddTrainingComponent],
-    imports: [CommonModule,MatSortModule,MatTableModule,MatFormFieldModule,MatDialogModule,MatPaginatorModule,MatInputModule,ReactiveFormsModule,MatButtonModule,MatIconModule,MatSelectModule,MatDatepickerModule,MatTooltipModule,MatNativeDateModule,
-        RouterModule.forChild(routes)],
+    imports: [CommonModule,MatSortModule,MatTableModule,MatFormFieldModule,MatDialogModule,MatPaginatorModule,MatInputModule,ReactiveFormsModule,MatButtonModule,MatIconModule,MatSelectModule,MatDatepickerModule,MatTooltipModule,MatNativeDateModule, ClipboardModule,
+        RouterModule.forChild(routes)], 
 })
 export class TrainingModule {}

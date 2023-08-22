@@ -311,4 +311,9 @@ export class WorkFromOfficeComponent {
             TL,
         };
     }
+    shouldShowPreferences(formattedDate: string): boolean {
+        return formattedDate !== this.forcastMonth ||
+        (formattedDate === this.formattedDate && this.attendances.length === 0);
+    }
+
 }
