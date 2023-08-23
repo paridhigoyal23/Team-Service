@@ -84,18 +84,22 @@ export class DashboardComponent implements OnInit {
         this.attendanceService.getAttendence().subscribe(
             (data) => {
                 this.attendanceData = data;
-                const currentDate = new Date().toISOString().slice(0, 10);
+                const currentDate = new Date();
+                const year = currentDate.getFullYear();
+                const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+                const day = String(currentDate.getDate()).padStart(2, '0');
+                const currentDateFormatted = `${year}-${month}-${day}`;
 
                 this.employeesWorkingFromOffice = this.attendanceData.filter(
                     (employeeRecord: any) => {
                         const attendanceRecord = employeeRecord.values.find(
                             (record: any) => {
-                                return record.hasOwnProperty(currentDate);
+                                return record.hasOwnProperty(currentDateFormatted);
                             }
                         );
         
                         return (
-                            attendanceRecord && attendanceRecord[currentDate] === "O"
+                            attendanceRecord && attendanceRecord[currentDateFormatted] === "O"
                         );
                     }
                 ); 
@@ -110,18 +114,21 @@ export class DashboardComponent implements OnInit {
         this.attendanceService.getAttendence().subscribe(
             (data) => {
                 this.attendanceData = data;
-                const currentDate = new Date().toISOString().slice(0, 10);
-    
+                const currentDate = new Date();
+                const year = currentDate.getFullYear();
+                const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+                const day = String(currentDate.getDate()).padStart(2, '0');
+                const currentDateFormatted = `${year}-${month}-${day}`;
             this.employeesWorkingFromHome = this.attendanceData.filter(
                 (employeeRecord: any) => {
                     const attendanceRecord = employeeRecord.values.find(
                         (record: any) => {
-                            return record.hasOwnProperty(currentDate);
+                            return record.hasOwnProperty(currentDateFormatted);
                         }
                     );
     
                     return (
-                        attendanceRecord && attendanceRecord[currentDate] === "H"
+                        attendanceRecord && attendanceRecord[currentDateFormatted] === "H"
                     );
                 }
             );
@@ -137,18 +144,22 @@ export class DashboardComponent implements OnInit {
         this.attendanceService.getAttendence().subscribe(
             (data) => {
                 this.attendanceData = data;
-                const currentDate = new Date().toISOString().slice(0, 10);
+                const currentDate = new Date();
+                const year = currentDate.getFullYear();
+                const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+                const day = String(currentDate.getDate()).padStart(2, '0');
+                const currentDateFormatted = `${year}-${month}-${day}`;
 
                 this.employeesLeave = this.attendanceData.filter(
                     (employeeRecord: any) => {
                         const attendanceRecord = employeeRecord.values.find(
                             (record: any) => {
-                                return record.hasOwnProperty(currentDate);
+                                return record.hasOwnProperty(currentDateFormatted);
                             }
                         );
         
                         return (
-                            attendanceRecord && attendanceRecord[currentDate] === "L"
+                            attendanceRecord && attendanceRecord[currentDateFormatted] === "L"
                         );
                     }
                 );

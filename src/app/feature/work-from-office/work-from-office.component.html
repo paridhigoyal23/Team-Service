@@ -26,11 +26,8 @@
                                     *ngIf="
                                         role !== 'admin' &&
                                         role !== 'manager' &&
-                                        (formattedDate <= forcastMonth) &&
-                                        
-                                        shouldShowPreferences(formattedDate)
-                                        "
-                                    
+                                        ((currentMonth == forcastMonth && this.attendances.length === 0)) || currentMonth<forcastMonth
+                                    "
                                 >
                                     WFO Preferences
                                     <div *ngFor="let days of daysWeek">
@@ -52,6 +49,29 @@
                                     >
                                         Apply
                                     </button>
+                                </div>
+                                <div class="col col-stats ml-3 ml-sm-0">
+                                    <div
+                                        class="numbers"
+                                        *ngIf="
+                                            role == 'admin' || role == 'manager'
+                                        "
+                                    >
+                                        <!-- <div class="form-group">
+                                            <input
+                                                type="date"
+                                                name="datedd"
+                                                class="form-control"
+                                                id="id_datedd"
+                                                    [(ngModel)]="formattedDates"
+                                                      (change)="onDateChange($event)"
+                                                      [min]="minDate"
+                                                      [max]="maxDate"
+                                                    />
+                                                  
+                                          
+                                        </div> -->
+                                    </div>
                                 </div>
                             </form>
                         </div>

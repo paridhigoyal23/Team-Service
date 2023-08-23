@@ -17,6 +17,7 @@ import { MatNativeDateModule } from "@angular/material/core";
 import { NgModelGroup} from "@angular/forms";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { DatePipe } from "@angular/common";
 const routes: Routes = [
     {
      path: "", 

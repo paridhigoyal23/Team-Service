@@ -19,12 +19,16 @@ export class WorkFromOfficeComponent {
     role: string;
     EmpId: any;
     name: string;
-    currentMonth: number;
+    currentMonth: string;
     currentDate: Date = new Date();
     formattedDate: string;
+    formattedDates: string;
+    minDate: string;
+    maxDate: string;
+    attendanceData: any[] = [];
     constructor(
         private forecastService: AttendenceService,
-        private loginService: LoginService,private attendanceService:AttendenceService
+        private loginService: LoginService
     ) {
         this.role = this.loginService.getUserRole();
         this.EmpId = this.loginService.getUserId();
@@ -32,7 +36,16 @@ export class WorkFromOfficeComponent {
         const year = this.currentDate.getFullYear();
         const month = this.currentDate.getMonth() + 1;
         const formattedMonth = month < 10 ? `0${month}` : month;
-        this.formattedDate = `${year}-${formattedMonth}`;
+        const lastDay = new Date(year, this.currentDate.getMonth() + 1, 0)
+            .getDate()
+            .toString()
+            .padStart(2, "0");
+        const months = (this.currentDate.getMonth() + 1)
+            .toString()
+            .padStart(2, "0");
+        this.minDate = `${year}-${months}-01`;
+        this.maxDate = `${year}-${months}-${lastDay}`;
+        this.currentMonth = `${year}-${months}`;
     }
     attendances: any[];
     monthDates: any[] = [];
@@ -40,9 +53,10 @@ export class WorkFromOfficeComponent {
     wfhWfoValues: any[] = [];
     weekDays: any = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     forcastMonth: string;
+    forcastDate: string;
     daysWeek: string[] = ["Mon", "Tue", "Wed", "Thu", "Fri"];
     selectedValuesOfDays: { [key: string]: boolean } = {};
-
+    matchingDates: any[] = [];
     ngOnInit(): void {
         const todayDate = new Date();
         this.forcastMonth = `${todayDate.getFullYear()}-${(
@@ -52,6 +66,9 @@ export class WorkFromOfficeComponent {
             .padStart(2, "0")}`;
 
         this.getDataAsPerUserRole();
+        this.forecastService.getAttendence().subscribe((data) => {
+            this.attendanceData = data; // Assuming the JSON data is an array of objects
+        });
     }
 
     getSelectedMonthForcast() {
@@ -141,8 +158,6 @@ export class WorkFromOfficeComponent {
             );
         }
     }
-
-    ngAfterViewInit(): void {}
 
     getRowspan(date: string | number): number {
         return date == "TO" || date == "TH" || date == "TL" ? 2 : 1;
@@ -311,9 +326,57 @@ export class WorkFromOfficeComponent {
             TL,
         };
     }
-    shouldShowPreferences(formattedDate: string): boolean {
-        return formattedDate !== this.forcastMonth ||
-        (formattedDate === this.formattedDate && this.attendances.length === 0);
-    }
 
+    shouldShowPreferences(formattedDate: string): boolean {
+        return (
+            formattedDate !== this.forcastMonth ||
+            (formattedDate === this.formattedDate &&
+                this.attendances.length === 0)
+        );
+    }
+    // async onDateChange(event: any) {
+    //     alert("Do you want to change");
+    //     const selectedDate = event.target.value;
+    //     const parts = selectedDate.split("-");
+    //     if (parts.length === 3) {
+    //         const year = parseInt(parts[2], 10);
+    //         const month = parseInt(parts[1], 10);
+    //         const day = parseInt(parts[0], 10);
+
+    //         // Create a new date with the selected year, month, and day
+    //         const formattedDate = new Date(year, month - 1, day)
+    //             .toISOString()
+    //             .slice(0, 10);
+
+    //         this.formattedDate = this.formattedDates; // Update the formattedDate property
+    //         await this.attendanceData.forEach(async (entry) => {
+    //             console.log("line 353=>", entry["name"]);
+    //             await entry.values.forEach((valueObj: any) => {
+    //                 const entryDate = Object.keys(valueObj)[0];
+
+    //                 if (entryDate === this.formattedDate) {
+    //                     if ((valueObj[formattedDate] = "O")) {
+    //                         entry.TO -= 1;
+    //                     } else if ((valueObj[formattedDate] = "H")) {
+    //                         entry.TH -= 1;
+    //                     } else {
+    //                         entry.TL -= 1;
+    //                     }
+    //                     valueObj[entryDate] = "BH";
+    //                 }
+    //                 return;
+    //             });
+    //             // Update the attendance using the API
+    //             await this.updateAttendance(entry);
+    //             console.log("line 371=>", entry["name"]);
+    //         });
+    //         await this.getDataAsPerUserRole();
+    //         console.log("Updated attendance data:", this.attendanceData);
+    //     }
+    // }
+    // updateAttendance(data: any) {
+    //     this.forecastService.updateAttendence(data).subscribe((response) => {
+    //         console.log("Update response", response);
+    //     });
+    // }
 }

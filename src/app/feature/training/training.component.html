@@ -50,7 +50,7 @@
                                     mat-sort-header
                                     >{{ column }}</mat-header-cell
                                 >
-                                <mat-cell *matCellDef="let data">
+                                <mat-cell *matCellDef="let data; let i = index">
                                     <ng-container *ngIf="column === 'Actions'">
                                         <!-- Display the Font Awesome icon -->
                                         <button
@@ -69,13 +69,21 @@
                                         <a
                                             class="btn"
                                             matTooltip="Training"
-                                            (click)="openLink(data.Reference)"
+                                            (click)="
+                                                copyLink(data.Reference, i)
+                                            "
                                         >
                                             <i
                                                 class="text-success fa-solid fa-link"
                                             ></i>
                                         </a>
-                                        <div [class]="copiedClass" id="copied-message">Link copied!</div>
+                                        <span
+                                            *ngIf="clickRowNo == i"
+                                            id="copied-message" class="ms-4 ps-2 pe-2"
+                                            style="border: 1px solid;background-color:white;border-radius:20px" 
+                                        >
+                                            copied!
+                                        </span>
                                     </ng-container>
                                     <ng-container
                                         *ngIf="

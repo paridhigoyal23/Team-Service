@@ -21,15 +21,13 @@
                                 *ngIf="role == 'admin'"
                                 (click)="openButton()"
                                 class="border-0 add-employee bg-primary text-white rounded-5"
-                               
-                                matTooltip="Add Employee List"
+                                matTooltip="Add Employee"
                             >
                                 <i class="fa-sharp fa-solid fa-plus"></i>
                             </button>
                             <button
                                 *ngIf="role == 'admin'"
                                 class="border-0 upload-employee bg-danger ms-1 text-white"
-                              
                                 (click)="openDialog()"
                                 multiple="false"
                                 matTooltip="Upload Employee List"
@@ -37,8 +35,7 @@
                                 <i class="fa fa-upload" aria-hidden="true"></i>
                             </button>
                             <button
-                                class="border-0 download-employee ms-1  me-1 bg-success text-white"
-                             
+                                class="border-0 download-employee ms-1 me-1 bg-success text-white"
                                 (click)="exportEmployeeData()"
                                 matTooltip="Download Employee List"
                             >
@@ -47,7 +44,6 @@
                                     aria-hidden="true"
                                 ></i>
                             </button>
-                           
                         </div>
                     </div>
                 </div>
@@ -73,7 +69,7 @@
                                         "
                                     >
                                         <button
-                                           class="btn border-0"
+                                            class="btn border-0"
                                             (click)="editEmployee(element)"
                                             [disabled]="
                                                 element.EmpId != EmpId &&

@@ -16,7 +16,7 @@ import { Dialog } from "@angular/cdk/dialog";
 
 import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { TrainingApiServiceService } from "src/app/service/training-api-service.service";
-import { Clipboard } from '@angular/cdk/clipboard';
+import { Clipboard } from "@angular/cdk/clipboard";
 import { MatIcon } from "@angular/material/icon";
 import { DataService } from "src/app/core/services";
 import { Subscription } from "rxjs";
@@ -43,10 +43,11 @@ export class TrainingComponent implements OnInit, OnChanges {
         "Status",
         "Actions",
     ];
-    copiedClass: string = 'hidden';
+    copiedClass: string = "hidden";
     dataSource: MatTableDataSource<Element>;
     EmpId: any;
     employees: Employee[] = [];
+    clickRowNo: number;
     @ViewChild(MatPaginator) paginator: MatPaginator;
     @ViewChild(MatSort) sort: MatSort;
     role: string;
@@ -57,7 +58,7 @@ export class TrainingComponent implements OnInit, OnChanges {
         private loginService: LoginService,
         private restApiService: RestapiService,
         private router: Router,
-        private clipboard:Clipboard
+        private clipboard: Clipboard
     ) {
         this.dataSource = new MatTableDataSource<Element>([]);
         this.dataSource = new MatTableDataSource();
@@ -139,13 +140,14 @@ export class TrainingComponent implements OnInit, OnChanges {
         );
     }
 
-    openLink(link: string) {
-        this.copiedClass = '';
+    copyLink(link: string, index: number) {
+        this.clickRowNo = index;
+        this.copiedClass = "";
         this.clipboard.copy(link);
 
         setTimeout(() => {
-            this.copiedClass = 'hidden';
-        }, 2000)
+            this.clickRowNo = -1;
+        }, 2000);
     }
     ngOnDestroy(): void {
         if (this.subscription) {
