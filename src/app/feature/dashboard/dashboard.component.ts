@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
         private trainingService: TrainingApiServiceService,
         private attendanceService: AttendenceService
     ) {}
-    numberOfEmployees: number;
+    numberOfEmployees: number=0;
     projects: Set<string> = new Set<string>();
     title = "ng2-charts-demo";
     trainingsToday: number = 0;
