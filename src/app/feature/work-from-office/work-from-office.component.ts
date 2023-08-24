@@ -334,49 +334,5 @@ export class WorkFromOfficeComponent {
                 this.attendances.length === 0)
         );
     }
-    // async onDateChange(event: any) {
-    //     alert("Do you want to change");
-    //     const selectedDate = event.target.value;
-    //     const parts = selectedDate.split("-");
-    //     if (parts.length === 3) {
-    //         const year = parseInt(parts[2], 10);
-    //         const month = parseInt(parts[1], 10);
-    //         const day = parseInt(parts[0], 10);
-
-    //         // Create a new date with the selected year, month, and day
-    //         const formattedDate = new Date(year, month - 1, day)
-    //             .toISOString()
-    //             .slice(0, 10);
-
-    //         this.formattedDate = this.formattedDates; // Update the formattedDate property
-    //         await this.attendanceData.forEach(async (entry) => {
-    //             console.log("line 353=>", entry["name"]);
-    //             await entry.values.forEach((valueObj: any) => {
-    //                 const entryDate = Object.keys(valueObj)[0];
-
-    //                 if (entryDate === this.formattedDate) {
-    //                     if ((valueObj[formattedDate] = "O")) {
-    //                         entry.TO -= 1;
-    //                     } else if ((valueObj[formattedDate] = "H")) {
-    //                         entry.TH -= 1;
-    //                     } else {
-    //                         entry.TL -= 1;
-    //                     }
-    //                     valueObj[entryDate] = "BH";
-    //                 }
-    //                 return;
-    //             });
-    //             // Update the attendance using the API
-    //             await this.updateAttendance(entry);
-    //             console.log("line 371=>", entry["name"]);
-    //         });
-    //         await this.getDataAsPerUserRole();
-    //         console.log("Updated attendance data:", this.attendanceData);
-    //     }
-    // }
-    // updateAttendance(data: any) {
-    //     this.forecastService.updateAttendence(data).subscribe((response) => {
-    //         console.log("Update response", response);
-    //     });
-    // }
+   
 }
