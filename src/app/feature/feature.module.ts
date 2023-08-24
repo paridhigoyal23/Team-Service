@@ -6,10 +6,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { WorkFromOfficeComponent } from './work-from-office/work-from-office.component';
 
 
+
 @NgModule({
   declarations: [
     DashboardComponent,
-    WorkFromOfficeComponent
+    WorkFromOfficeComponent,
+
   ],
   imports: [
     CommonModule,

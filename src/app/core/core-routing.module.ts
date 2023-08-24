@@ -4,7 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { ListComponent } from "./components/list/list.component";
 import { NavbarCmpComponent } from "./components/navbar-cmp/navbar-cmp.component";
 import { CoreComponent } from "./core.component";
-import { LoginPageComponent } from "../login-page/login-page.component";
+// import { LoginPageComponent } from "../login-page/login-page.component";
 const routes:Routes=[
     // {
     //     path:'/login',

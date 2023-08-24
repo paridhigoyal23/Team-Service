@@ -26,7 +26,9 @@
                                     *ngIf="
                                         role !== 'admin' &&
                                         role !== 'manager' &&
-                                        ((currentMonth == forcastMonth && this.attendances.length === 0)) || currentMonth<forcastMonth
+                                        ((currentMonth == forcastMonth &&
+                                            this.attendances.length === 0) ||
+                                            currentMonth < forcastMonth)
                                     "
                                 >
                                     WFO Preferences
