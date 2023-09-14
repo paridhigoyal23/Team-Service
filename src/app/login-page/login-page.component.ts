@@ -52,7 +52,7 @@ export class LoginPageComponent implements OnInit {
                     AppConstants.USER_INFO,
                     loggedInUser
                 );
-                this.router.navigate(["/team-members"]);
+                this.router.navigate(["/dashboard"]);
             } else {
                 this.loginError = true;
             }

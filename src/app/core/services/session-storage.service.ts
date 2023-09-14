@@ -1,21 +1,21 @@
 import { Injectable } from "@angular/core";
-
+import { CookieService } from "ngx-cookie-service";
 @Injectable({
     providedIn: "root",
 })
 export class SessionStorageService {
-    constructor() {}
+    constructor(private cookieService: CookieService) {}
 
     setItem(key: string, value: any): void {
-        sessionStorage.setItem(key, JSON.stringify(value));
+        this.cookieService.set(key, JSON.stringify(value));
     }
 
     getItem(key: string): any {
-        const item = sessionStorage.getItem(key);
+        const item = this.cookieService.get(key);
         return item ? JSON.parse(item) : null;
     }
 
     removeItem(key: string): void {
-        sessionStorage.removeItem(key);
+        this.cookieService.delete(key);
     }
 }

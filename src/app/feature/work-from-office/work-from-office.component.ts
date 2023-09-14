@@ -180,6 +180,9 @@ export class WorkFromOfficeComponent {
     }
     /** */
     changeForcast(forcastedDate: any, forcastedValue: any, empIndex: number) {
+        if(forcastedValue=="BH"){
+                return
+        }
         for (
             let index = 0;
             index < this.attendances[empIndex].values.length;
@@ -212,7 +215,9 @@ export class WorkFromOfficeComponent {
                         this.attendances[empIndex]["TL"] - 1;
                     this.attendances[empIndex]["TO"] =
                         this.attendances[empIndex]["TO"] + 1;
+                        
                 }
+                
                 break;
             }
         }
@@ -233,21 +238,7 @@ export class WorkFromOfficeComponent {
 
     /* This method is called when user clicks on apply. This will create a new forcast if not exist for current month, otherwise will update the existing forcast*/
     onButtonClick(): void {
-        // console.log("input value", this.forcastMonth);
-        // const monthParts = this.forcastMonth.split("-");
-        // const year = monthParts[0];
-        // const month = monthParts[1];
-
-        // const checkedValuesOfDays = Object.keys(
-        //     this.selectedValuesOfDays
-        // ).filter((option) => this.selectedValuesOfDays[option]);
-        // const val = this.getValues(+year, +month, checkedValuesOfDays);
-        // console.log("data to save", val);
-
-        // this.forecastService.postAttendence(val).subscribe((res) => {
-        //     console.log("res", res);
-        //     this.getDataAsPerUserRole();
-        // });
+        
         console.log("input value", this.forcastMonth);
         const monthParts = this.forcastMonth.split("-");
         const year = monthParts[0];
@@ -327,12 +318,6 @@ export class WorkFromOfficeComponent {
         };
     }
 
-    shouldShowPreferences(formattedDate: string): boolean {
-        return (
-            formattedDate !== this.forcastMonth ||
-            (formattedDate === this.formattedDate &&
-                this.attendances.length === 0)
-        );
-    }
+   
    
 }
